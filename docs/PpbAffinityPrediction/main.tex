@@ -1,0 +1,24 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[T2A]{fontenc}			% кодировка
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+
+\input{settings/style}
+\input{settings/packages}
+\input{settings/commands}
+
+\begin{document}
+\input{settings/titlepage}
+
+\tableofcontents
+\newpage
+
+\input{contents/abstract}
+\input{contents/introduction}
+\input{contents/problem}
+\clearpage
+
+\newpage
+\input{settings/endofdocument}
+% \input{contents/listings}
+\end{document}

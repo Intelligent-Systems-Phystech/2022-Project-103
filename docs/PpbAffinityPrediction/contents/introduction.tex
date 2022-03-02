@@ -1,0 +1,33 @@
+\section{Introduction}
+The binding of two proteins can be viewed as a reversible and rapid process in an equilibrium that is
+governed by the law of mass action. Binding affinity is the strength of the interaction between two
+(or more than two) molecules that bind reversibly (interact). It is translated into physico-chemical
+terms in the dissociation constant Kd, the latter being the concentration of free protein at which
+half of all binding sites of the second protein type are occupied [2]. \\
+Predicting the affinity of protein–protein complexes has been a topic of active research for more
+than two decades. The availability of experimental data on binding affinity prompted researchers to
+explore the principles and develop methods for prediction [1]. However, the amount of experimentally
+observed three-dimensional protein-protein complexes with known binding constants still remains
+extremely limited [3, 4], which complicates the application of modern deep learning methods in this
+task. The most recent computational research on PPI binding affinity prediction is mainly built
+around the idea of utilizing standard statistical [5, 6] and machine learning methods [4, 7, 8, 9]
+trained on various handcrafted descriptors such as QSAR features [8], inter-residue contacts and
+buried surface area [5], surface tension area and hydrophobicity [4], and sequence-based descriptors
+[6, 9]. \\
+Recent advances in adjacent computational problems such as protein structure prediction [10] or
+protein-protein interaction prediction [11] demonstrated how powerful deep learning methods can
+be as long as enough training data is provided and correct inductive biases are set up. \\
+In this work, we will apply geometric deep learning methods for predicting protein-protein binding
+affinity. We believe that geometry is a clue for understanding protein-protein interactions, and aim
+to notably move forward the state of the art in binding affinity prediction with the aid of graph
+neural networks. To the best of our knowledge, geometric deep learning methods have never been
+applied to the protein-protein binding affinity prediction problem so far.
+\subsection{Objectives}
+Three main objectives of this work can be formulated as follows:
+\begin{itemize}
+\item Refine PDBbind [12] data and a standard binding affinity dataset [3], and compile a novel
+benchmark of PPIs with known binding affinity values
+\item Employ graph-learning toolset to predict binding affinities of PPIs from the new dataset
+\item Benchmark the resulting method against existing state-of-the-art approaches
+\end{itemize}
+

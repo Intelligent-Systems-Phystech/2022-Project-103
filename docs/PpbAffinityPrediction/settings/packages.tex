@@ -1,0 +1,86 @@
+\usepackage[T2A]{fontenc}			% кодировка
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}	% локализация и переносы
+
+\usepackage{graphicx}
+
+\setlength\parindent{0pt}
+
+\sloppy                                    % строго соблюдать границы текста
+\linespread{1.3}                           % коэффициент межстрочного интервала
+\setlength{\parskip}{0.5em}                % вертик. интервал между абзацами
+
+\usepackage{lipsum}
+\usepackage{easy-todo} % Добавление задач с помощью \todo{}
+\usepackage{csquotes} % Для "правильных" кавычек
+
+\usepackage[iso, german]{isodate} % Für eine deutsche Formatierung des Abgabedatums / Eidesstattlicher Erkärung
+\usepackage[style=apa, backend=biber, sortlocale=de_RU]{biblatex} % Biber backend für Literaturverzeichnis
+\addbibresource{literatur/bibliography.bib} % Интеграция литературы
+
+\DeclareLanguageMapping{german}{german-apa} % Anpassen Spracheinstellungen im Literaturverzeichnis.
+\usepackage[activate={true,nocompatibility},
+	final,
+	tracking=true,
+	kerning=true,
+	expansion=true,
+	spacing=true,
+	factor=1050,
+	stretch=25,
+	shrink=10]{microtype} % Für die Feineinstellung der Zeichensetzung.
+\usepackage{booktabs}
+\usepackage{appendix}
+\usepackage[rflt]{floatflt}
+\usepackage{fancyvrb}
+% \usepackage[hidelinks]{hyperref} % Klickbare aber nicht markierte Links im PDF
+\usepackage{setspace}
+% \usepackage{fancyhdr} % Für schönere Kopf-/Fußzeilen und Fußnoten.
+% \usepackage[right=4 cm, left=2.5 cm, top=2.5 cm, bottom=3 cm]{geometry} % Seitenränder
+\usepackage{pbox}
+\usepackage{tabulary}
+
+\hypersetup{
+    pdfstartview=FitH,
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\usepackage{titleps}                       % колонтитулы
+
+\newpagestyle{main}{
+  \setheadrule{.4pt}                      
+  \sethead{\coursename}{}{\hyperlink{intro}{\;Назад к содержанию}}
+  \setfootrule{.4pt}                       
+  \setfoot{\coursedate \; ФПМИ МФТИ}{}{\thepage} 
+}      
+
+\pagestyle{main}
+
+\sloppy                                    % строго соблюдать границы текста
+\linespread{1.3}                           % коэффициент межстрочного интервала
+\setlength{\parskip}{0.5em}                % вертик. интервал между абзацами
+
+\setcounter{secnumdepth}{0}                % отключение нумерации разделов
+
+\usepackage{listings}
+\usepackage{color}
+
+\title{Syntax Highlighting in LaTeX with the listings Package}
+\author{writeLaTeX}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\footnotesize,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+}
