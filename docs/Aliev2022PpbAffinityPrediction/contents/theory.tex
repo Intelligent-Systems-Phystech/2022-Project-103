@@ -1,0 +1,26 @@
+\section{Theory}
+Consider optimizing model $w = (w_{mod}, w_{pred})$ where $w(\mathcal{D}_T)) = w((X_T, y_T)) = w_{pred}(w_{mod}(X_T), y_t)$
+. We refer to $w_{mod}$ as modifying function and $w_{pred}$ as predicting function. 
+We narrow the space of all optimizing models $W$ to space of pairs of modifying and predicting functions $W_{mod} \times W_{pred}$.
+\newtheorem{hypothesis}{Hypothesis}
+\begin{hypothesis}
+Consider pair $(w_{mod}, w_{pred})$ with the least loss function on test set. Consider $\phi$ - linear space transformation. Then $w_{mod}(X_T) = w_{mod}(\phi(X_T))$ and $w_{pred}(w_{mod}(X_T), y_t) \neq w_{pred}(w_{mod}(\phi(X_T)), y_t)$ for almost all $X_T$.
+\end{hypothesis}
+
+\newtheorem{hypothesis}{Hypothesis}
+\begin{hypothesis}
+Consider pair $(w_{mod}, w_{pred})$ with the least loss function on test set. Consider $\psi$ - permutation. Then $w_{mod}(X_T) = w_{mod}(\psi(X_T))$.
+\end{hypothesis}
+
+\newtheorem{note}{Note}
+\begin{note}
+Hypothesis 1 states significance of $w_{mod}$. For example, we do not consider identity operator as a possible modifying function.
+\end{note}
+
+Based on these assumptions, our solution is described as follows:
+\begin{enumerate}
+    \item Set the space $W_{mod}$ such as $\forall w_{mod} \in W_{mod}$ hypothesis 1 and 2 stands.
+    \item Set the space $W_{pred}$
+    \item Cross-validate error function of each pair $(w_{mod}, w_{pred}) \in W_{mod} \times W_{pred}$ with respective domain and image.
+    \item Benchmark the best model from step 3 against existing state-of-the-art solutions on the test set.  
+\end{enumerate}
